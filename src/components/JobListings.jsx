@@ -10,7 +10,6 @@ const JobLists = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {jobs.map((job) => (
-              // eslint-disable-next-line react/jsx-key
               <JobList key={job.id} job={job} />
             ))}
           </div>
