@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaLocationDot } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 const JobList = ({ job }) => {
   const [showFullJobDescription, setShowFullJobDescription] = useState(false);
   let description = job.description;
@@ -23,7 +24,7 @@ const JobList = ({ job }) => {
                 setShowFullJobDescription((currrentState) => !currrentState)
               }
             >
-              {showFullJobDescription ? "Less" : "More"}
+              {showFullJobDescription ? "..Less" : "More"}
             </button>
           </div>
 
@@ -36,12 +37,12 @@ const JobList = ({ job }) => {
               <FaLocationDot className="inline mr-1 mb-1 text-lg" />
               {job.location}
             </div>
-            <a
-              href={`/job/${job.id}`}
+            <Link
+              to={`/job/${job.id}`}
               className="h-[36px] bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-lg text-center text-sm"
             >
               Read More
-            </a>
+            </Link>
           </div>
         </div>
       </div>

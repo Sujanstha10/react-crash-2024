@@ -1,10 +1,6 @@
 import jobs from "../jobs.json";
-import JobList from "./JobList";
-
-const JobLists = () => {
-  const recentJobs = jobs.slice(0, 3);
-  console.log(recentJobs);
-
+import JobList from "../components/JobList";
+const JobsPage = () => {
   return (
     <>
       <section className="bg-blue-50 px-4 py-10">
@@ -13,7 +9,7 @@ const JobLists = () => {
             Browse Jobs
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {recentJobs.map((job) => (
+            {jobs.map((job) => (
               <JobList key={job.id} job={job} />
             ))}
           </div>
@@ -23,4 +19,4 @@ const JobLists = () => {
   );
 };
 
-export default JobLists;
+export default JobsPage;
